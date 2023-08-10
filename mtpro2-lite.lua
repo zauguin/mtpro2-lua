@@ -339,6 +339,73 @@ local remap_letters = {
   [0xB6] = 0x0111, -- đ
 }
 
+-- These are some additional glyphs here which do not have bold variants in Unicode,
+-- especially dotless i, dotless j, period and some accents
+local remap_bold = {
+  [0x30] = 0x1D7CE, -- 𝟎
+  [0x31] = 0x1D7CF, -- 𝟏
+  [0x32] = 0x1D7D0, -- 𝟐
+  [0x33] = 0x1D7D1, -- 𝟑
+  [0x34] = 0x1D7D2, -- 𝟒
+  [0x35] = 0x1D7D3, -- 𝟓
+  [0x36] = 0x1D7D4, -- 𝟔
+  [0x37] = 0x1D7D5, -- 𝟕
+  [0x38] = 0x1D7D6, -- 𝟖
+  [0x39] = 0x1D7D7, -- 𝟗
+  [0x41] = 0x1D400, -- 𝐀
+  [0x42] = 0x1D401, -- 𝐁
+  [0x43] = 0x1D402, -- 𝐂
+  [0x44] = 0x1D403, -- 𝐃
+  [0x45] = 0x1D404, -- 𝐄
+  [0x46] = 0x1D405, -- 𝐅
+  [0x47] = 0x1D406, -- 𝐆
+  [0x48] = 0x1D407, -- 𝐇
+  [0x49] = 0x1D408, -- 𝐈
+  [0x4A] = 0x1D409, -- 𝐉
+  [0x4B] = 0x1D40A, -- 𝐊
+  [0x4C] = 0x1D40B, -- 𝐋
+  [0x4D] = 0x1D40C, -- 𝐌
+  [0x4E] = 0x1D40D, -- 𝐍
+  [0x4F] = 0x1D40E, -- 𝐎
+  [0x50] = 0x1D40F, -- 𝐏
+  [0x51] = 0x1D410, -- 𝐐
+  [0x52] = 0x1D411, -- 𝐑
+  [0x53] = 0x1D412, -- 𝐒
+  [0x54] = 0x1D413, -- 𝐓
+  [0x55] = 0x1D414, -- 𝐔
+  [0x56] = 0x1D415, -- 𝐕
+  [0x57] = 0x1D416, -- 𝐖
+  [0x58] = 0x1D417, -- 𝐗
+  [0x59] = 0x1D418, -- 𝐘
+  [0x5A] = 0x1D419, -- 𝐙
+  [0x61] = 0x1D41A, -- 𝐚
+  [0x62] = 0x1D41B, -- 𝐛
+  [0x63] = 0x1D41C, -- 𝐜
+  [0x64] = 0x1D41D, -- 𝐝
+  [0x65] = 0x1D41E, -- 𝐞
+  [0x66] = 0x1D41F, -- 𝐟
+  [0x67] = 0x1D420, -- 𝐠
+  [0x68] = 0x1D421, -- 𝐡
+  [0x69] = 0x1D422, -- 𝐢
+  [0x6A] = 0x1D423, -- 𝐣
+  [0x6B] = 0x1D424, -- 𝐤
+  [0x6C] = 0x1D425, -- 𝐥
+  [0x6D] = 0x1D426, -- 𝐦
+  [0x6E] = 0x1D427, -- 𝐧
+  [0x6F] = 0x1D428, -- 𝐨
+  [0x70] = 0x1D429, -- 𝐩
+  [0x71] = 0x1D42A, -- 𝐪
+  [0x72] = 0x1D42B, -- 𝐫
+  [0x73] = 0x1D42C, -- 𝐬
+  [0x74] = 0x1D42D, -- 𝐭
+  [0x75] = 0x1D42E, -- 𝐮
+  [0x76] = 0x1D42F, -- 𝐯
+  [0x77] = 0x1D430, -- 𝐰
+  [0x78] = 0x1D431, -- 𝐱
+  [0x79] = 0x1D432, -- 𝐲
+  [0x7A] = 0x1D433, -- 𝐳
+}
+
 -- \DeclareMathSymbol{\bigcupprod}{\mathop}{largesymbols}{"8E}
 -- \DeclareMathSymbol{\bigcapprod}{\mathop}{largesymbols}{"90}
 -- \DeclareMathSymbol{\bigvarland}{\mathop}{largesymbols}{"A6}
@@ -722,6 +789,12 @@ local function load_letters(size, fonts, characters, ssty)
   return parameters
 end
 
+local function load_bold(size, fonts, characters, ssty)
+  local parameters = load_font(({'mt2mbs', 'mt2mbf'})[ssty] or 'mt2mbt', size, remap_bold, fonts, characters)
+
+  return parameters
+end
+
 local function load_symbols(size, fonts, characters, ssty)
   local parameters = load_font(({'mt2sys', 'mt2syf'})[ssty] or 'mt2syt', size, remap_symbols, fonts, characters)
 
@@ -1039,6 +1112,7 @@ return function(request)
 
   load_serif(request.size, fonts, characters)
   local param_letters = load_letters(request.size, fonts, characters, ssty)
+  load_bold(request.size, fonts, characters, ssty)
   local param_symbols = load_symbols(request.size, fonts, characters, ssty)
   local param_large = load_largesymbols(request.size, fonts, characters, ssty)
 
