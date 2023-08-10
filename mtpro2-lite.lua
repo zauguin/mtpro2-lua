@@ -612,8 +612,9 @@ local handled = {
   italic = true,
   kerns = true,
   next = true,
-  vert_variants = true, -- FIXME: This is a lie
+  vert_variants = true,
   ligatures = true, -- FIXME: This is a lie. Only needed for text fonts right now
+  commands = true, -- Can be ignored since we use the original font
 }
 
 local function copy_char(char, findex, cid, mapping)
@@ -662,8 +663,21 @@ local function copy_char(char, findex, cid, mapping)
   }
 end
 
+local function read_maybe_virtual(name, size)
+  local f = font.read_tfm(name, size)
+  if not f then return end
+  local v = font.read_vf(name, size)
+  if not v then return f end
+  f.type = 'virtual'
+  f.fonts = v.fonts
+  for cid, cdata in next, v.characters do
+    f.characters[cid].commands = cdata.commands
+  end
+  return f
+end
+
 local function load_font(name, size, mapping, fonts, characters)
-  local tfmdata = assert(font.read_tfm(name, size))
+  local tfmdata = assert(read_maybe_virtual(name, size))
   local fid = font.define(tfmdata)
   local findex = #fonts + 1
   fonts[findex] = {id = fid}
