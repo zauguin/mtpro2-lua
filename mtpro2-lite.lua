@@ -187,7 +187,7 @@ local remap_letters = {
   [0x25] = 0x1D71A, -- 𝜚
   [0x26] = 0x1D70D, -- 𝜍
   [0x27] = 0x1D711, -- 𝜑
-  -- sYmbols. (The nils are hook parts)
+  -- Symbols. (The nils are hook parts)
   [0x28] = 0x21BC, -- ↼
   [0x29] = 0x21BD, -- ↽
   [0x2A] = 0x21C0, -- ⇀
@@ -300,35 +300,35 @@ local remap_letters = {
   [0x90] = 0xA7, -- §
   [0x91] = 0xB6, -- ¶
   -- Upright greek lowercase
-  [0x92] = 0x003B1, -- α
-  [0x93] = 0x003B2, -- β
-  [0x94] = 0x003B3, -- γ
-  [0x95] = 0x003B4, -- δ
-  [0x96] = 0x003F5, -- ϵ
-  [0x97] = 0x003B6, -- ζ
-  [0x98] = 0x003B7, -- η
-  [0x99] = 0x003B8, -- θ
-  [0x9A] = 0x003B9, -- ι
-  [0x9B] = 0x003BA, -- κ
-  [0x9C] = 0x003BB, -- λ
-  [0x9D] = 0x003BC, -- μ
-  [0x9E] = 0x003BD, -- ν
-  [0x9F] = 0x003BE, -- ξ
-  [0xA0] = 0x003C0, -- π
-  [0xA1] = 0x003C1, -- ρ
-  [0xA2] = 0x003C3, -- σ
-  [0xA3] = 0x003C4, -- τ
-  [0xA4] = 0x003C5, -- υ
-  [0xA5] = 0x003CE, -- ώ
-  [0xA6] = 0x003C7, -- χ
-  [0xA7] = 0x003C8, -- ψ
-  [0xA8] = 0x003C9, -- ω
-  [0xA9] = 0x003B5, -- ε
-  [0xAA] = 0x003D1, -- ϑ
-  [0xAB] = 0x003D6, -- ϖ
-  [0xAC] = 0x003F1, -- ϱ
-  [0xAD] = 0x003C2, -- ς
-  [0xAE] = 0x003D5, -- ϕ
+  [0x92] = 0x03B1, -- α
+  [0x93] = 0x03B2, -- β
+  [0x94] = 0x03B3, -- γ
+  [0x95] = 0x03B4, -- δ
+  [0x96] = 0x03F5, -- ϵ
+  [0x97] = 0x03B6, -- ζ
+  [0x98] = 0x03B7, -- η
+  [0x99] = 0x03B8, -- θ
+  [0x9A] = 0x03B9, -- ι
+  [0x9B] = 0x03BA, -- κ
+  [0x9C] = 0x03BB, -- λ
+  [0x9D] = 0x03BC, -- μ
+  [0x9E] = 0x03BD, -- ν
+  [0x9F] = 0x03BE, -- ξ
+  [0xA0] = 0x03C0, -- π
+  [0xA1] = 0x03C1, -- ρ
+  [0xA2] = 0x03C3, -- σ
+  [0xA3] = 0x03C4, -- τ
+  [0xA4] = 0x03C5, -- υ
+  [0xA5] = 0x03D5, -- ϕ
+  [0xA6] = 0x03C7, -- χ
+  [0xA7] = 0x03C8, -- ψ
+  [0xA8] = 0x03C9, -- ω
+  [0xA9] = 0x03B5, -- ε
+  [0xAA] = 0x03D1, -- ϑ
+  [0xAB] = 0x03D6, -- ϖ
+  [0xAC] = 0x03F1, -- ϱ
+  [0xAD] = 0x03C2, -- ς
+  [0xAE] = 0x03C6, -- φ
   [0xAF] = 0x03F0, -- ϰ
   -- [0xB0] = \varbeta
   [0xB1] = 0x03D0, -- ϐ -- upright \varbeta
@@ -417,7 +417,7 @@ local remap_symbols = {
   [0x00] = 0x2212, -- −
   [0x01] = 0x22C5, -- ⋅
   [0x02] = 0xD7, -- ×
-  [0x03] = 0x2A, -- *
+  [0x03] = 0x2217, -- *
   [0x04] = 0xF7, -- ÷
   [0x05] = 0x22C4, -- ⋄
   [0x06] = 0xB1, -- ±
@@ -427,8 +427,8 @@ local remap_symbols = {
   [0x0A] = 0x2297, -- ⊗
   [0x0B] = 0x2298, -- ⊘
   [0x0C] = 0x2299, -- ⊙
-  [0x0D] = 0x25CB, -- ○
-  [0x0E] = 0x2218, -- ∘
+  [0x0D] = 0x25EF, -- ◯
+  [0x0E] = 0x25E6, -- ◦
   [0x0F] = 0x2219, -- ∙
   [0x10] = 0x224D, -- ≍
   [0x11] = 0x2261, -- ≡
@@ -479,8 +479,8 @@ local remap_symbols = {
   [0x3E] = 0x22A4, -- ⊤
   [0x3F] = 0x22A5, -- ⊥
   [0x40] = 0x2135, -- ℵ
-  -- [0x41] = \tie -- This is a *text* tie accent?!
-  -- [0x42] = 0xFind_unicode('comp') -- \comp -- miss -- Some circle...
+  [0x41] = 0x2040, -- This is a *text* tie accent?! Mapped as binary operator (?!?) consisten with XCharter Math
+  [0x42] = 0x2218, -- ∘
   [0x43] = 0x2B, -- +
   [0x44] = 0x3D, -- =
   [0x45] = 0x20D7, -- \vec
@@ -497,13 +497,13 @@ local remap_symbols = {
   [0x50] = 0x0307, -- \dot
   [0x51] = 0x0303, -- \tilde
   [0x52] = 0x0308, -- \ddot
-  -- [0x53] = 0xFind_unicode('wwbar') -- \wwbar -- TODO: next for 0x78
+  -- [0x53] = 0xFind_unicode('wwbar') -- \wwbar -- next for 0x78
   -- [0x54] = 0xFind_unicode('dotup') -- \dotup -- Slightly higher version of \dot!?
   -- [0x55] = 0xFind_unicode('ddotup') -- \ddotup -- Slightly higher version of \ddot!?
   [0x56] = 0x030A, -- \mathring
   [0x57] = 0x3A, -- :
-  -- Small versions of symbold for se operations
-  -- [0x58] = 0xFind_unicode('setdif') -- \setdif
+  -- Small versions of symbold for set operations
+  [0x58] = 0x2216,
   -- [0x59] = 0xFind_unicode('cupprod') -- \cupprod
   -- [0x5A] = 0xFind_unicode('capprod') -- \capprod
   [0x5B] = 0x222A, -- ∪
@@ -535,10 +535,10 @@ local remap_symbols = {
   [0x75] = 0x2293, -- ⊓
   [0x76] = 0x2291, -- ⊑
   [0x77] = 0x2292, -- ⊒
-  -- [0x78] = 0xFind_unicode('wbar') -- \wbar -- TODO: next for 0x4E
-  -- [0x79] = 0xFind_unicode('what') -- \what -- TODO: next for 0x4F
-  -- [0x7A] = 0xFind_unicode('wtilde') -- \wtilde -- TODO: next for 0x51
-  -- [0x7B] = 0xFind_unicode('wcheck') -- \wcheck -- TODO: next for 0x4C
+  -- [0x78] = 0xFind_unicode('wbar') -- \wbar -- next for 0x4E
+  -- [0x79] = 0xFind_unicode('what') -- \what -- next for 0x4F
+  -- [0x7A] = 0xFind_unicode('wtilde') -- \wtilde -- next for 0x51
+  -- [0x7B] = 0xFind_unicode('wcheck') -- \wcheck -- next for 0x4C
   [0x7C] = 0x2663, -- \clubsuit
   [0x7D] = 0x2662, -- \diamondsuit
   [0x7E] = 0x2661, -- \heartsuit
@@ -547,7 +547,7 @@ local remap_symbols = {
   -- You could get the impression that someone has a preference.
   [0x80] = 0x2667, -- \openclubsuit
   -- [0x81] = 0xFind_unicode('shadedclubsuit') -- \shadedclubsuit
-  [0x82] = 0x2664, -- \openspadesuit -- miss
+  [0x82] = 0x2664, -- \openspadesuit
   -- [0x83] = 0xFind_unicode('shadedspadesuit') -- \shadedspadesuit
   -- [0x84] = 0xFind_unicode('hbar') -- \hbar -- variant of \hslash
   [0x85] = 0x2209, -- \notin
@@ -565,7 +565,7 @@ local remap_symbols = {
   [0x91] = 0x21A6, -- \mapsto
   [0x92] = 0x27FC, -- \longmapsto
   [0x93] = 0x27F7, -- \longleftrightarrow
-  [0x94] = 0x27F8, -- \Longleftrightarrow
+  [0x94] = 0x27FA, -- \Longleftrightarrow
   [0x95] = 0x21CC, -- \rightleftharpoons
   [0x96] = 0x226F, -- \notless
   [0x97] = 0x2270, -- \notleq
@@ -608,10 +608,27 @@ local remap_symbols = {
 
 local remap_largesymbols_up = {
   -- TODO: Map additional characters
+  [0x30] = 0x239B, -- ⎛
+  [0x31] = 0x239E, -- ⎞
+  [0x32] = 0x23A1, -- ⎡
+  [0x33] = 0x23A4, -- ⎤
+  [0x34] = 0x23A3, -- ⎣
+  [0x35] = 0x23A6, -- ⎦
+  [0x36] = 0x23A2, -- ⎢
+  [0x37] = 0x23A5, -- ⎥
+  [0x38] = 0x23A7, -- ⎧
+  [0x39] = 0x23AB, -- ⎫
+  [0x3A] = 0x23A9, -- ⎩
   [0x3A] = 0x27EE, -- ⟮
+  [0x3B] = 0x23AD, -- ⎭
   [0x3B] = 0x27EF, -- ⟯
-  [0x40] = 0x23B0, -- ⎰
-  [0x41] = 0x23B1, -- ⎱
+  [0x3C] = 0x23A8, -- ⎨
+  [0x3D] = 0x23AC, -- ⎬
+  [0x3E] = 0x23AE, -- ⎮
+  [0x40] = 0x239D, -- ⎝
+  [0x41] = 0x23A0, -- ⎠
+  [0x42] = 0x239C, -- ⎜
+  [0x43] = 0x239F, -- ⎟
   [0x46] = 0x2A06, -- ⨆
   [0x48] = 0x222E, -- ∮
   [0x4A] = 0x2A00, -- ⨀
@@ -626,6 +643,17 @@ local remap_largesymbols_up = {
   [0x56] = 0x22C0, -- ⋀
   [0x57] = 0x22C1, -- ⋁
   [0x60] = 0x2210, -- ∐
+  [0x74] = 0x23B7, -- ⎷
+  [0x88] = 0x23AA, -- ⎪
+  [0x92] = 0x222C, -- ∬
+  [0x94] = 0x222D, -- ∭
+  [0x96] = 0x222F, -- ∯
+  [0x98] = 0x2230, -- ∰
+  [0x9A] = 0x2232, -- ∲
+  [0x9C] = 0x2233, -- ∳
+  [0x9E] = 0x2231, -- ∱
+  [0xAA] = 0x2A0D, -- ⨍
+  [0xAC] = 0x2A0F, -- ⨏
   [0xC3] = 0x23DC, -- ⏜
 }
 
@@ -762,7 +790,24 @@ end
 
 local function load_serif(size, fonts, characters)
   -- TODO: Make configurable
-  return load_font('ptmr8t', size, remap_serif, fonts, characters)
+  local parameters = load_font('ptmr8t', size, remap_serif, fonts, characters)
+  -- Greek aliases. No indirection through the remap table since it would be the same and it's a foreign font
+  characters[0x0391] = characters[0x41]
+  characters[0x0392] = characters[0x42]
+  characters[0x0395] = characters[0x45]
+  characters[0x0396] = characters[0x5A]
+  characters[0x0397] = characters[0x48]
+  characters[0x0399] = characters[0x49]
+  characters[0x039A] = characters[0x4B]
+  characters[0x039C] = characters[0x4D]
+  characters[0x039D] = characters[0x4E]
+  characters[0x039F] = characters[0x4F]
+  characters[0x03A1] = characters[0x50]
+  characters[0x03A4] = characters[0x54]
+  characters[0x03A7] = characters[0x58]
+
+  characters[0x03BF] = characters[0x6F]
+  return parameters
 end
 
 local function load_letters(size, fonts, characters, ssty)
@@ -770,22 +815,83 @@ local function load_letters(size, fonts, characters, ssty)
 
   local dot = characters[remap_letters[0x3A]]
   if dot then
-    -- Emulate an ellipsis
+    -- Various contractions featuring dots
+    -- \ldots
     local thinmuskip = {'right', ssty and 0 or size / 6}
+    local dotcmd = {'slot', 0, remap_letters[0x3A]}
     characters[0x2026] = {
-      width = 3 * dot.width + (ssty and 0 or size / 3), -- TODO: Incorporate kerns if necessary
+      width = 3 * dot.width + (ssty and 0 or size / 3),
       height = dot.height,
       depth = dot.depth,
       italic = dot.italic,
       commands = {
-        dot.commands[1],
+        dotcmd,
         thinmuskip,
-        dot.commands[1],
+        dotcmd,
         thinmuskip,
-        dot.commands[1],
+        dotcmd,
+      },
+    }
+    -- \vdots
+    local vmove = {'down', -2 * size / 5}
+    local push = {'push'}
+    local pop = {'pop'}
+    characters[0x22EE] = {
+      width = dot.width,
+      height = dot.height + 7 * size / 5, -- These are the two offsets and 0.3em random additional height
+      depth = dot.depth,
+      italic = dot.italic,
+      commands = {
+        push,
+        dotcmd,
+        pop,
+        vmove,
+        push,
+        dotcmd,
+        pop,
+        vmove,
+        dotcmd,
+      },
+    }
+    -- \ddots
+    local vup = {'down', -7 * size / 10}
+    local right_mu = {'right', size / 18}
+    local right_2mu = {'right', size / 9}
+    local vmove_down = {'down', 3 * size / 10}
+    characters[0x22F1] = {
+      width = 3 * dot.width + (ssty and 0 or size / 3),
+      height = dot.height + 7 * size / 5, -- These are the two offsets and 0.3em random additional height
+      depth = dot.depth,
+      italic = dot.italic,
+      commands = {
+        vup,
+        right_mu,
+        dotcmd,
+        vmove_down,
+        right_2mu,
+        dotcmd,
+        vmove_down,
+        right_2mu,
+        dotcmd,
       },
     }
   end
+
+  characters[0x1D6E2] = characters[remap_letters[0x41]]
+  characters[0x1D6E3] = characters[remap_letters[0x42]]
+  characters[0x1D6E6] = characters[remap_letters[0x45]]
+  characters[0x1D6E7] = characters[remap_letters[0x5A]]
+  characters[0x1D6E8] = characters[remap_letters[0x48]]
+  characters[0x1D6EA] = characters[remap_letters[0x49]]
+  characters[0x1D6EB] = characters[remap_letters[0x4B]]
+  characters[0x1D6ED] = characters[remap_letters[0x4D]]
+  characters[0x1D6EE] = characters[remap_letters[0x4E]]
+  characters[0x1D6F0] = characters[remap_letters[0x4F]]
+  characters[0x1D6F2] = characters[remap_letters[0x50]]
+  characters[0x1D6F5] = characters[remap_letters[0x54]]
+  characters[0x1D6F8] = characters[remap_letters[0x58]]
+
+  characters[0x1D70A] = characters[remap_letters[0x6F]]
   return parameters
 end
 
@@ -798,6 +904,11 @@ end
 local function load_symbols(size, fonts, characters, ssty)
   local parameters = load_font(({'mt2sys', 'mt2syf'})[ssty] or 'mt2syt', size, remap_symbols, fonts, characters)
 
+  characters[0xB7] = characters[remap_symbols[0x01]] -- Alias, once as binary symbol and once as punctuation
+  characters[0x29F5] = characters[remap_symbols[0x6E]] -- Alias, once as binary symbol and once as ordinary
+  characters[0x2223] = characters[remap_symbols[0x6A]] -- Alias, once as binary symbol and once as ordinary
+  characters[0x2225] = characters[remap_symbols[0x6B]] -- Alias, once as binary symbol and once as ordinary
+  characters[0x27C2] = characters[remap_symbols[0x3F]] -- Alias, once as binary symbol and once as ordinary
   characters[remap_symbols[0x4C]].next = remap_symbols[0x7B] -- \wcheck
   characters[remap_symbols[0x4E]].next = remap_symbols[0x78] -- \wbar
   characters[remap_symbols[0x4F]].next = remap_symbols[0x79] -- \what
@@ -1106,7 +1217,6 @@ return function(request)
   local ssty = features.ssty
 
   local factor = request.size / designsize
-  local scaled_parameters = {} -- TODO
 
   local fonts, characters = {}, {}
 
